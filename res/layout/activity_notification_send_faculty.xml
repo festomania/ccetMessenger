@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@drawable/bg"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".FacultyPanel" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <EditText
+                android:id="@+id/MessageData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxHeight="90dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/edittext_background"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:ems="10"
+                android:hint="Msg to be broadcasted" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="FACULTY PANEL"
+		        android:textSize="25dp"
+		        android:textColor="#88000000"
+		        android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Spinner
+                android:id="@+id/DepttspinnerFaculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/MessageData"
+                android:layout_marginTop="19dp"
+                android:entries="@array/deptt_arrays"
+                android:prompt="@string/deptt_prompt" />
+
+            <Spinner
+                android:id="@+id/BranchSpinnerFaculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/DepttspinnerFaculty"
+                android:entries="@array/branch_arrays"
+                android:prompt="@string/branch_prompt" />
+
+            <Spinner
+                android:id="@+id/SemSpinnerFaculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/BranchSpinnerFaculty"
+                android:entries="@array/sem_arrays"
+                android:prompt="@string/sem_prompt" />
+
+            <CheckBox
+                android:id="@+id/SendToAllcheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/MessageData"
+                android:text="Or Send to whole college" />
+
+            <CheckBox
+                android:id="@+id/SemcheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/branchcheckBox3"
+                android:layout_alignTop="@+id/SemSpinnerFaculty"
+                android:text="Sem Condtion" />
+
+            <CheckBox
+                android:id="@+id/branchcheckBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/DepttcheckBox"
+                android:layout_alignTop="@+id/BranchSpinnerFaculty"
+                android:text="Branch Condtion" />
+
+            <CheckBox
+                android:id="@+id/DepttcheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/DepttspinnerFaculty"
+                android:layout_centerHorizontal="true"
+                android:text="Deptt Condtion" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_weight="5">
+
+            <Button
+                android:id="@+id/sendPushButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/enter_button_selector"
+                android:padding="5dp"
+				android:textColor="#88000000"
+				android:textStyle="bold"
+                android:text="Send Notification" />
+
+            <CheckBox
+                android:id="@+id/DontSaveMsgscheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/sendPushButton"
+                android:layout_centerHorizontal="true"
+                android:text="Dont save it on server" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

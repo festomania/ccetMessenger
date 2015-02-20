@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/pnjbUniTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+		android:textColor="#88000000"
+		android:textStyle="bold"
+        android:text="CCET DEGREE WING, CHD" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView1"
+            android:layout_alignParentLeft="true"
+			android:textColor="#88000000"
+			android:padding="4dp"
+			android:textStyle="bold"
+            android:onClick="navigateToStudentPanel"
+            android:background="@drawable/enter_button_selector"
+            android:text="Profile Panel" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/button2"
+            android:layout_above="@+id/textView1"
+			android:padding="4dp"
+			android:textColor="#88000000"
+			android:textStyle="bold"
+            android:onClick="navigateToFacultyPanel"
+            android:background="@drawable/enter_button_selector"
+            android:text="Faculty Panel" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textSize="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/enter_button_selector"
+            android:onClick="getToBulletinBoard"
+            android:text="Bulletin Board"
+            android:textColor="#88000000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/aboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentLeft="true"
+            android:textColor="#88000000"
+            android:background="@drawable/enter_button_selector"
+            android:textStyle="bold"
+            android:onClick="navigateToKnowMeActivity"
+            android:text="Know About CCET Deg Wing" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/aboutUs"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ccet" />
+    </RelativeLayout>
+
+</LinearLayout>

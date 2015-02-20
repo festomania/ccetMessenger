@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.Ccet.Messenger"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!--
+	  IMPORTANT: If you change the package name of this sample app, change
+	  "com.parse.tutorials.pushnotifications.permission.C2D_MESSAGE" in the
+	  lines below to match the new package name.
+    -->
+
+    <permission
+        android:name="org.Ccet.Messenger.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.Ccet.Messenger.permission.C2D_MESSAGE" />
+
+    <application
+        android:name="com.PinBoard.Notifications.Application"
+        android:allowBackup="true"
+        android:icon="@drawable/applogo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <!--This meta-data tag is required to use Google Play Services.-->
+        <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+        
+        <activity
+            android:name="com.PinBoard.Notifications.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.ParseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!--
+				  IMPORTANT: If you change the package name of this sample app,
+				  change "com.parse.tutorials.pushnotifications" in the lines
+				  below to match the new package name.
+                -->
+                <category android:name="org.Ccet.Messenger" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.PinBoard.Notifications.NoticesListView"
+            android:label="@string/title_activity_notices_list_view" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.SingleNoticeDetails"
+            android:label="@string/title_activity_single_notice_details"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.StudentPanel"
+            android:label="@string/title_activity_student_panel"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.ShowPushMessage"
+            android:label="@string/title_activity_show_push_message"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.NotificationSendFaculty"
+            android:label="@string/title_activity_faculty_panel"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.LoginPanel"
+            android:label="@string/title_activity_login_panel" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.FacultyPanel"
+            android:label="@string/title_activity_faculty_panel" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.PostNoticeFaculty"
+            android:label="@string/title_activity_post_notice_faculty" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.SignUpFacultyForm"
+            android:label="@string/title_activity_sign_up_faculty_form" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.ForgetPassword"
+            android:label="@string/title_activity_forget_password" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.MessagesListView"
+            android:label="@string/title_activity_messages_list_view" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.BulletinBoard"
+            android:label="@string/title_activity_bulletin_board" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.KnowMe"
+            android:label="@string/title_activity_know_me" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.AttendenceMessage"
+            android:label="@string/title_activity_attendence_message" >
+        </activity>
+        <activity
+            android:name="com.PinBoard.Notifications.MessageToWholeFaculty"
+            android:label="@string/title_activity_message_to_whole_faculty" >
+        </activity>
+        <activity
+            android:name="org.Ccet.Messenger.CommonTextInfoDisplay"
+            android:label="@string/title_activity_common_text_info_display" >
+        </activity>
+        
+        <!--Include the AdActivity configChanges and theme. -->
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        
+    </application>
+
+</manifest>

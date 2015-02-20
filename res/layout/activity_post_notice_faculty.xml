@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg"
+    tools:context=".PostNoticeFaculty" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Post a Notice"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#88000000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/enter_button_selector"
+        android:onClick="postNotice"
+        android:padding="10dp"
+        android:text="Post Notice"
+        android:textColor="#88000000"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/camera_grey"
+        android:onClick="selectImage" />
+
+    <EditText
+        android:id="@+id/contentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:hint="Content"
+        android:maxHeight="90dp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/contentEditText"
+        android:layout_alignLeft="@+id/contentEditText"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:hint="Title of notice"
+        android:maxHeight="50dp"
+        android:padding="10dp"
+        android:textColor="#ffffff" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>

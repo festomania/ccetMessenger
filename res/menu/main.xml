@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item android:id="@+id/fb"
+          android:icon="@drawable/fb"
+          android:title="Fb"
+          android:showAsAction="ifRoom" />
+     
+     <item
+        android:id="@+id/aboutAppMenu"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Know Our App"/>
+     
+     <item
+        android:id="@+id/wantApp"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Want your own App?"/>
+     
+     
+    <item
+        android:id="@+id/clgWebsiteMenu"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Visit Our Website"/>
+     
+    <item
+        android:id="@+id/contactUs"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Contact Us"/>
+
+</menu>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CCET Degree Wing, Chd</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_message">Hey, Roobal Jindal is testing push notifications ..!!</string>
+    <string name="gender_text_view">Gender</string>
+    <string name="age_text_view">Age</string>
+    <string name="interests">Interests</string>
+    <string name="Name">Name</string>
+    <string name="gender_male_button">Male</string>
+    <string name="gender_female_button">Female</string>
+    <string name="save_button">Save</string>
+    <string name="refresh_button">Refresh</string>
+    <string name="ok_button">OK</string>
+    <string name="alert_dialog_title">Profile</string>
+    <string name="alert_dialog_success">Saved!</string>
+    <string name="alert_dialog_failed">Failed with error.</string>
+    <string name="title_activity_notices_list_view">Recent Notices</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_single_notice_details">PinBook</string>
+    <string name="title_activity_student_panel">PingBook</string>
+    <string name="deptt_prompt">Choose your deptt</string>
+    <string name="branch_prompt">Choose your branch</string>
+    <string name="sem_prompt">Choose your sem</string>
+    
+    
+    <string name="college">CCET, Chd</string>
+    
+	<string name="banner_ad_unit_id_live">ca-app-pub-3728580562604803/5903215772</string>
+	<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string-array name="deptt_arrays">
+        <item>BE</item>
+    </string-array>
+    <string-array name="branch_arrays">
+        <item>CSE</item>
+        <item>MECH</item>
+        <item>ECE</item>
+        <item>IT</item>
+    </string-array>
+    <string-array name="sem_arrays">
+        <item>1st Sem</item>
+        <item>2nd Sem</item>
+        <item>3rd sem</item>
+        <item>4th sem</item>
+        <item>5th sem</item>
+        <item>6th sem</item>
+        <item>7th sem</item>
+        <item>8th sem</item>
+    </string-array>
+    <string-array name="deptt_arrays_sendtoall">
+        <item>BE</item>
+        <item>LAW</item>
+        <item>MCA</item>
+        <item>sendToAll</item>
+    </string-array>
+    <string-array name="branch_arrays_sendtoall">
+        <item>CSE</item>
+        <item>MECH</item>
+        <item>ECE</item>
+        <item>IT</item>
+        <item>LLB</item>
+        <item>BALLB</item>
+        <item>MCA</item>
+        <item>sendToAll</item>
+    </string-array>
+    <string-array name="sem_arrays_sendtoall">
+        <item>1st Sem</item>
+        <item>2nd Sem</item>
+        <item>3rd sem</item>
+        <item>4th sem</item>
+        <item>5th sem</item>
+        <item>6th sem</item>
+        <item>7th sem</item>
+        <item>8th sem</item>
+        <item>sendToAll</item>
+    </string-array>
+
+    <string name="title_activity_show_push_message">PingBook</string>
+    <string name="title_activity_faculty_panel">PingBook</string>
+    <string name="title_activity_login_panel">PingBook</string>
+    <string name="title_activity_post_notice_faculty">PingBook</string>
+    <string name="title_activity_sign_up_faculty_form">PingBook</string>
+    <string name="title_activity_forget_password">PingBook</string>
+    <string name="title_activity_messages_list_view">PingBook</string>
+    <string name="title_activity_bulletin_board">PingBook Of CCET</string>
+    <string name="title_activity_lol">PingBook</string>
+    <string name="title_activity_know_me">PingBook</string>
+    <string name="title_activity_attendence_message">PingBook</string>
+    <string name="title_activity_message_to_whole_faculty">MessageToWholeFaculty</string>
+    <string name="title_activity_common_text_info_display">PINGBOOK</string>
+
+</resources>
