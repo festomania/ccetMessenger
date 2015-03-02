@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.SaveCallback;

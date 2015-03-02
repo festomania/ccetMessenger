@@ -17,7 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.ParseAnalytics;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;

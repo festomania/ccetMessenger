@@ -1,6 +1,6 @@
 package com.PinBoard.Notifications;
 
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;

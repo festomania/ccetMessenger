@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;

@@ -1,5 +1,5 @@
 package com.PinBoard.Notifications;
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.LogInCallback;
 import com.parse.ParseInstallation;
 import com.parse.ParsePush;

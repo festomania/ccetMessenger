@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.widget.TextView;
 
 import java.util.List;
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 
 import com.parse.ParseObject;
 

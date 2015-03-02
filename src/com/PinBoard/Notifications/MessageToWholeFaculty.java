@@ -8,7 +8,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.SendCallback;
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 
 import android.os.Bundle;
 import android.app.Activity;

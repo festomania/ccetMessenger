@@ -6,7 +6,7 @@ import java.util.List;
 
 
 
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 
 import com.parse.ParseFile;
 import com.parse.ParseObject;

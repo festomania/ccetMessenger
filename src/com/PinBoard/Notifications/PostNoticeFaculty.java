@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 import org.Ccet.Messenger.CommonTextInfoDisplay;
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;

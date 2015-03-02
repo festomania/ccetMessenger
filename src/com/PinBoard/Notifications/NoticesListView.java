@@ -1,7 +1,7 @@
 package com.PinBoard.Notifications;
 import java.util.List;
 
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;

@@ -29,7 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.Ccet.Messenger.CommonTextInfoDisplay;
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.GetDataCallback;
 import com.parse.ParseAnalytics;
 import com.parse.ParseException;

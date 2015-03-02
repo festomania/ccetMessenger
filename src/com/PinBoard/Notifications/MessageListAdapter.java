@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.ParseObject;
 import com.PinBoard.Notifications.NoticeListAdapter.ViewHolder;
 

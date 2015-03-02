@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;

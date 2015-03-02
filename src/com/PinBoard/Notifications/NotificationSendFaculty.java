@@ -2,7 +2,7 @@ package com.PinBoard.Notifications;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.Ccet.Messenger.R;
+import org.Ccet.Messenger.Pingbook.R;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
