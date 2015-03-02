@@ -115,7 +115,7 @@ public class MainActivity extends Activity {
         	Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
             intent.addCategory(Intent.CATEGORY_BROWSABLE);
-            intent.setData(Uri.parse("https://www.facebook.com/roobal.jindal1"));
+            intent.setData(Uri.parse("https://www.facebook.com/CCETofficial"));
             startActivity(intent);
         	return true;
         	
@@ -125,6 +125,9 @@ public class MainActivity extends Activity {
             intent4.addCategory(Intent.CATEGORY_BROWSABLE);
             intent4.setData(Uri.parse("http://www.ccet.ac.in/"));
             startActivity(intent4);
+        	return true;
+        case R.id.exit:
+        	this.finish();
         	return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -192,11 +195,11 @@ public class MainActivity extends Activity {
 			myDialog= new ProgressDialogBox(this, "Registering app..", "Loading");
 			myDialog.showDialog();
 
-		ParseInstallation.getCurrentInstallation().saveInBackground(new SaveCallback() {
+			ParseInstallation.getCurrentInstallation().saveInBackground(new SaveCallback() {
 			@Override
 			public void done(ParseException e) {
 				if (e == null) {
-					Toast toast = Toast.makeText(getApplicationContext(), R.string.alert_dialog_success, Toast.LENGTH_SHORT);
+					Toast toast = Toast.makeText(getApplicationContext(), "Successfuly Registered !", Toast.LENGTH_SHORT);
 					toast.show();
 					myDialog.dismissDialog();
 					saveLocallySharedPref();

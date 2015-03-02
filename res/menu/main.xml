@@ -28,6 +28,11 @@
         android:id="@+id/contactUs"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Contact Us"/>
+        android:title="Contact Us"/> 
+    <item
+        android:id="@+id/exit"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Exit"/>
 
 </menu>

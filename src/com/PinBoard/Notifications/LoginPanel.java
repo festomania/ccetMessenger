@@ -60,8 +60,8 @@ public class LoginPanel extends Activity {
 						mydialog.dismissDialog();
 						if(ParseUser.getCurrentUser().getBoolean("emailVerified"))
 						{
-							Toast toast = Toast.makeText(getApplicationContext(), "Succesfully Logged in", Toast.LENGTH_SHORT);
-							toast.show();
+							//Toast toast = Toast.makeText(getApplicationContext(), "Succesfully Logged in", Toast.LENGTH_SHORT);
+							//toast.show();
 							saveLocallyUsername(username);
 							if(loginvaue.isChecked()){
 								makeLoginValueTrue();

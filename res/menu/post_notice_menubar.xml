@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item 
+         android:id="@+id/postImageMenuBar"
+         android:icon="@drawable/camera_icon_selector"
+		 android:title="Attatch a Photo"
+         android:showAsAction="ifRoom" />
+
+</menu>

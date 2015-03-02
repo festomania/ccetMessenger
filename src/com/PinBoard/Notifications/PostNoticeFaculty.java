@@ -1,7 +1,9 @@
 package com.PinBoard.Notifications;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 
+import org.Ccet.Messenger.CommonTextInfoDisplay;
 import org.Ccet.Messenger.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -19,8 +21,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.text.Editable;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +35,36 @@ public class PostNoticeFaculty extends Activity {
     private String selectedImagePath;
 	EditText titleEditText;
 	EditText contentEditText;
+	ImageView showSelectedImage;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_post_notice_faculty);
 		titleEditText = (EditText) findViewById(R.id.titleEditText);
 		contentEditText=(EditText) findViewById(R.id.contentEditText);
+		showSelectedImage=(ImageView) findViewById(R.id.imageView1);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		getMenuInflater().inflate(R.menu.post_notice_menubar, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch (item.getItemId()) {
+        case R.id.postImageMenuBar:
+        	Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent, ""),SELECT_PICTURE);
+            return true;
+         default:   
+        	return super.onOptionsItemSelected(item);
+		}
 	}
 
 	public void selectImage(View view){
@@ -102,10 +130,12 @@ public class PostNoticeFaculty extends Activity {
             if (requestCode == SELECT_PICTURE) {
                 Uri selectedImageUri = data.getData();
                 selectedImagePath = getPath(selectedImageUri);
-                //TextView text= (TextView) findViewById(R.id.pic_path);
-                //text.setTextSize(10);
-                //if(selectedImagePath.length()>0)
-                //text.setText("Image has been selected !");
+                File imgFile= new File(selectedImagePath);
+                if(imgFile.exists()){
+                	Bitmap imgBitmap= BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                	showSelectedImage.setVisibility(0);
+                	showSelectedImage.setImageBitmap(imgBitmap);
+                }
             }
         }
     }
