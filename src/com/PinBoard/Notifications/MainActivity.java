@@ -87,12 +87,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-        case R.id.contactUs:
-        	Intent intent1=new Intent(MainActivity.this,CommonTextInfoDisplay.class);
-			intent1.putExtra("heading", "Contact Us");
-			intent1.putExtra("className", "ContactUs");
-			startActivity(intent1);
-            return true;
+        
         case R.id.aboutAppMenu:
         	if(checkNetwork())
     		{
@@ -102,15 +97,7 @@ public class MainActivity extends Activity {
     			startActivity(intent6);
     		}
             return true;
-        case R.id.wantApp:
-        	if(checkNetwork())
-    		{
-    			Intent intent2=new Intent(MainActivity.this,CommonTextInfoDisplay.class);
-    			intent2.putExtra("heading", "Want Similar App?");
-    			intent2.putExtra("className", "WantYourOwnApp");
-    			startActivity(intent2);
-    		}
-            return true;
+        
         case R.id.fb:
         	Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
@@ -125,9 +112,6 @@ public class MainActivity extends Activity {
             intent4.addCategory(Intent.CATEGORY_BROWSABLE);
             intent4.setData(Uri.parse("http://www.ccet.ac.in/"));
             startActivity(intent4);
-        	return true;
-        case R.id.exit:
-        	this.finish();
         	return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -327,15 +311,16 @@ public class MainActivity extends Activity {
 	    	return false;
 	}
 	
-	public void onBackPressed(){
+	/*public void onBackPressed(){
 		exitCount++;
 		if(exitCount>1){
 			exitCount=0;
+			super.finish();
 			finish();
 		}
 		else{
 			Toast toast = Toast.makeText(getApplicationContext(), "Press again to exit", Toast.LENGTH_SHORT);
 			toast.show();
 		}
-	}
+	}*/
 }

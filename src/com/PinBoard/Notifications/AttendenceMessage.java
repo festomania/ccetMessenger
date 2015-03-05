@@ -111,6 +111,7 @@ public class AttendenceMessage extends Activity {
 			facultyMessageAttendenceClass.put("senderName", "By: "+ParseUser.getCurrentUser().get("username"));
 			facultyMessageAttendenceClass.put("recieverName", recipient);
 			facultyMessageAttendenceClass.put("college", college);
+			facultyMessageAttendenceClass.put("author", ParseUser.getCurrentUser().getString("username"));
 			facultyMessageAttendenceClass.saveInBackground( new SaveCallback() {
 				
 				@Override

@@ -15,6 +15,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    
 
     <!--
 	  IMPORTANT: If you change the package name of this sample app, change
@@ -33,7 +35,7 @@
         android:allowBackup="true"
         android:icon="@drawable/applogo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Holo.Light" >
         
         <!--This meta-data tag is required to use Google Play Services.-->
         <meta-data android:name="com.google.android.gms.version"
@@ -110,47 +112,69 @@
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.LoginPanel"
-            android:label="@string/title_activity_login_panel" >
+            android:label="@string/title_activity_login_panel"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.FacultyPanel"
-            android:label="@string/title_activity_faculty_panel" >
+            android:label="@string/title_activity_faculty_panel"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.PostNoticeFaculty"
-            android:label="@string/title_activity_post_notice_faculty" >
+            android:label="@string/title_activity_post_notice_faculty"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.SignUpFacultyForm"
-            android:label="@string/title_activity_sign_up_faculty_form" >
+            android:label="@string/title_activity_sign_up_faculty_form"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.ForgetPassword"
-            android:label="@string/title_activity_forget_password" >
+            android:label="@string/title_activity_forget_password"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.MessagesListView"
-            android:label="@string/title_activity_messages_list_view" >
+            android:label="@string/title_activity_messages_list_view"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.BulletinBoard"
-            android:label="@string/title_activity_bulletin_board" >
+            android:label="@string/title_activity_bulletin_board" 
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.KnowMe"
-            android:label="@string/title_activity_know_me" >
+            android:label="@string/title_activity_know_me"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.AttendenceMessage"
-            android:label="@string/title_activity_attendence_message" >
+            android:label="@string/title_activity_attendence_message"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.PinBoard.Notifications.MessageToWholeFaculty"
-            android:label="@string/title_activity_message_to_whole_faculty" >
+            android:label="@string/title_activity_message_to_whole_faculty"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="org.Ccet.Messenger.CommonTextInfoDisplay"
-            android:label="@string/title_activity_common_text_info_display" >
+            android:label="@string/title_activity_common_text_info_display"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         
         <!--Include the AdActivity configChanges and theme. -->

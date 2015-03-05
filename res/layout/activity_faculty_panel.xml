@@ -38,7 +38,7 @@
                 android:layout_marginTop="25dp"
                 android:background="@drawable/enter_button_selector"
                 android:onClick="navigateToSendNotification"
-                android:text="Send Notification"
+                android:text="Send Messages"
                 android:textColor="#88000000"
                 android:textStyle="bold" />
 

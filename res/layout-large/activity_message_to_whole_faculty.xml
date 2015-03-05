@@ -9,13 +9,47 @@
     android:background="@drawable/bg"
     tools:context=".AttendenceMessage" >
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Notification to whole faculty"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#88000000"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/BranchSpinnerFacCommunication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/MsgtowholefacultyEditText"
+        android:layout_below="@+id/MsgtowholefacultyEditText"
+        android:layout_marginTop="35dp"
+        android:entries="@array/branch_arrays"
+        android:textSize="20dp"
+        android:prompt="@string/branch_prompt" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/dontsaveserverWholeFacultyMsg"
+        android:layout_alignTop="@+id/BranchSpinnerFacCommunication"
+        android:textSize="20dp"
+        android:text="Deptt Condition" />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/dontsaveserverWholeFacultyMsg"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/enter_button_selector"
         android:onClick="sendMessageToWholeFaculty"
         android:padding="10dp"
@@ -24,43 +58,43 @@
         android:textColor="#88000000"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/MsgtowholefacultyEditText"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/edittext_background"
-        android:ems="10"
-        android:textSize="25dp"
-        android:hint="Message&apos;s content to be broadcasted to whole faculty"
-        android:maxHeight="220dp"
-        android:padding="30dp"
-        android:textAlignment="center"
-        android:textColor="#ffffff" />
-
     <CheckBox
         android:id="@+id/dontsaveserverWholeFacultyMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_below="@+id/SendtowholefacultycheckBox"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp"
-        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
         android:text="Dont save it on server" />
 
-    <TextView
-        android:id="@+id/textView1"
+    <CheckBox
+        android:id="@+id/SendtowholefacultycheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/MsgtowholefacultyEditText"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="83dp"
-        android:gravity="center"
-        android:text="Notification to whole faculty"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#88000000"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+        android:layout_below="@+id/BranchSpinnerFacCommunication"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Send to all Members" />
+
+    <EditText
+        android:id="@+id/MsgtowholefacultyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:hint="Message&apos;s content to be broadcasted to whole faculty"
+        android:maxHeight="220dp"
+        android:padding="30dp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="25dp" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

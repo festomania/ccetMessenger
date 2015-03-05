@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.Ccet.Messenger.Pingbook.R;
 
+import com.parse.FindCallback;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 
@@ -20,11 +21,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class NoticeListAdapter extends BaseAdapter{
 	
-	private List<ParseObject> listOfNoticesObj;
+	public List<ParseObject> listOfNoticesObj;
 	private LayoutInflater mInflater;
 	Context context;
 	String heading;
@@ -72,6 +74,7 @@ public class NoticeListAdapter extends BaseAdapter{
 
 		holder.heading.setText((String)listOfNoticesObj.get(arg0).get(heading));
 		holder.content.setText((String)listOfNoticesObj.get(arg0).get(content));
+		holder.imageAttatchmentIcon.setVisibility(8);
 		
 		Format formatter = new SimpleDateFormat("yyyy-MM-dd");
 		String s = formatter.format(listOfNoticesObj.get(arg0).getUpdatedAt());
@@ -80,6 +83,15 @@ public class NoticeListAdapter extends BaseAdapter{
 		s = formatter.format(listOfNoticesObj.get(arg0).getUpdatedAt());
 		holder.time.setText("Time: "+s);
 		
+		try {
+			ParseFile image= (ParseFile)listOfNoticesObj.get(arg0).get("ImageFile");
+			if(image.getUrl().length()>0)
+				holder.imageAttatchmentIcon.setVisibility(0);
+			else
+				holder.imageAttatchmentIcon.setVisibility(8);
+			//Log.e("ImageUrl->",(String)image.getUrl());
+		} catch (Exception e) {
+		}
 		
 		
 		row.setOnClickListener(new OnClickListener() {
@@ -112,12 +124,14 @@ public class NoticeListAdapter extends BaseAdapter{
 		TextView content;
 		TextView date;
 		TextView time;
+		ImageView imageAttatchmentIcon;
 
 		public ViewHolder(View convertView) {
 			heading=(TextView) convertView.findViewById(R.id.heading);
 			content=(TextView) convertView.findViewById(R.id.content);
 			date=(TextView) convertView.findViewById(R.id.date);
 			time=(TextView) convertView.findViewById(R.id.time);
+			imageAttatchmentIcon=(ImageView) convertView.findViewById(R.id.imageView1);
 		}
 	}
 	

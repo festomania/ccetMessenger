@@ -37,27 +37,33 @@ public class CommonTextInfoDisplay extends Activity {
 	TextView heading;
 	String className;
 	Context context;
+	Button invivibleWantSimilarApp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_common_text_info_display);
 		contentTextView= (TextView) findViewById(R.id.contentOfAboutApp);
+		invivibleWantSimilarApp=(Button) findViewById(R.id.wantsimilarappInvivisible);
 		contentTextView.setTextIsSelectable(true);
+		
 		heading= (TextView) findViewById(R.id.layoutTextHeading);
 		className=getIntent().getStringExtra("className");
 		heading.setText(getIntent().getStringExtra("heading"));
+		if(className.equalsIgnoreCase("AboutApp")){
+			invivibleWantSimilarApp.setVisibility(0);
+		}
 		context=this;
 		fetchcontent();
 	}
 	
 	
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.common_text_info_display, menu);
-		return true;
+	public void navigateToWantSimilarApp(View view){
+		Intent intent2=new Intent(CommonTextInfoDisplay.this,CommonTextInfoDisplay.class);
+		intent2.putExtra("heading", "Want Similar App?");
+		intent2.putExtra("className", "WantYourOwnApp");
+		startActivity(intent2);
 	}
 	
 	private void fetchcontent() {

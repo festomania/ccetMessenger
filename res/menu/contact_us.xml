@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item android:id="@+id/contactUs"
+          android:icon="@drawable/contactus"
+          android:title="Contact Us"
+          android:showAsAction="always" />
+</menu>

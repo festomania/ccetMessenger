@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:text="FACULTY PANEL"
+                android:text="SEND MESSAGES"
 		        android:textSize="45dp"
 		        android:textColor="#88000000"
 		        android:textStyle="bold"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/branchcheckBox3"
                 android:layout_alignTop="@+id/SemSpinnerFaculty"
-                android:text="Sem Condtion" />
+                android:text="Select Sem" />
 
             <CheckBox
                 android:id="@+id/branchcheckBox3"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/DepttcheckBox"
                 android:layout_alignTop="@+id/BranchSpinnerFaculty"
-                android:text="Branch Condtion" />
+                android:text="Select Branch" />
 
             <CheckBox
                 android:id="@+id/DepttcheckBox"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/DepttspinnerFaculty"
                 android:layout_centerHorizontal="true"
-                android:text="Deptt Condtion" />
+                android:text="Select Course" />
 
             <EditText
                 android:id="@+id/MessageData"

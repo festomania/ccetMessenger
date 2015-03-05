@@ -84,11 +84,6 @@ public class StudentPanel extends Activity {
 
 	@Override
 	public void onStart() {
-		
-		Toast toast = Toast.makeText(getApplicationContext(), 
-				"Pls Scroll down and Enter correct details", Toast.LENGTH_SHORT);
-	    //toast.getView().setBackgroundColor();
-		toast.show();
 		// Display the current values for this user, such as their age and gender.
 		displayUserProfile();
 		refreshUserProfile();

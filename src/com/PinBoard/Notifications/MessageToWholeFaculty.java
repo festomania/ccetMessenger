@@ -26,6 +26,7 @@ public class MessageToWholeFaculty extends Activity {
 	String message;
 	CheckBox dntsaveNjustSend;
 	CheckBox branchCheckBox;
+	CheckBox sendtoallCheckBox;
 	Spinner branchSpinner;
 	String college;
 
@@ -39,6 +40,7 @@ public class MessageToWholeFaculty extends Activity {
 	    college=getResources().getString(R.string.college);
 	    branchCheckBox=(CheckBox) findViewById(R.id.checkBox2);
 	    branchSpinner= (Spinner) findViewById(R.id.BranchSpinnerFacCommunication);
+	    sendtoallCheckBox=(CheckBox) findViewById(R.id.SendtowholefacultycheckBox);
 	}
 
 	public void sendMessageToWholeFaculty(View view){
@@ -54,16 +56,19 @@ public class MessageToWholeFaculty extends Activity {
 	
 	void onlyBroadcast(){
 		ParsePush push = new ParsePush();
-		push.setChannel("Faculty");
-		push.setMessage(message);
+		//push.setChannel("Faculty");
+		push.setMessage(transformMessage(message));
 		
 
 		ParseQuery pushQuery = ParseInstallation.getQuery();
 
 		pushQuery.whereEqualTo("college", college);
 		pushQuery.whereEqualTo("isFaculty", true);
-		if(branchCheckBox.isChecked()){
-			pushQuery.whereEqualTo("branch", String.valueOf(branchSpinner.getSelectedItem()));
+		
+		if(!sendtoallCheckBox.isChecked()){
+			if(branchCheckBox.isChecked()){
+				pushQuery.whereEqualTo("branch", String.valueOf(branchSpinner.getSelectedItem()));
+			}
 		}
 		push.setQuery(pushQuery);
 		
@@ -87,10 +92,11 @@ public class MessageToWholeFaculty extends Activity {
 			
 			final ParsePush push = new ParsePush();
 			push.setMessage(transformMessage(msg));
-			push.setChannel("Faculty");
-
-			if(branchCheckBox.isChecked()){
-				pushQuery.whereEqualTo("branch", String.valueOf(branchSpinner.getSelectedItem()));
+			//push.setChannel("Faculty");
+			if(!sendtoallCheckBox.isChecked()){
+				if(branchCheckBox.isChecked()){
+					pushQuery.whereEqualTo("branch", String.valueOf(branchSpinner.getSelectedItem()));
+				}
 			}
 			
 			pushQuery.whereEqualTo("college", college);
@@ -105,6 +111,7 @@ public class MessageToWholeFaculty extends Activity {
 			facultyMessageAttendenceClass.put("message", transformMessage(msg));
 			facultyMessageAttendenceClass.put("college", college);
 			facultyMessageAttendenceClass.put("senderName", "By: "+ParseUser.getCurrentUser().get("username"));
+			facultyMessageAttendenceClass.put("author", ParseUser.getCurrentUser().getString("username"));
 			facultyMessageAttendenceClass.saveInBackground( new SaveCallback() {
 				
 				@Override
@@ -147,9 +154,9 @@ public String transformMessage(String msg) {
 		String newMsg;
 		try {
 			ParseUser currentUser = ParseUser.getCurrentUser();
-			newMsg="To whole Faculty: "+ msg;
+			newMsg="\""+msg+"\"";
 			newMsg=newMsg+"\n\n" + "From: "+ currentUser.getString("username")+
-			"\n(Deptt: "+currentUser.get("deptt")+")";
+			"\n(Deptt: "+currentUser.get("deptt")+")"+"\nTHIS MESSAGE WAS SENT TO ALL FACULTY MEMBERS";
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

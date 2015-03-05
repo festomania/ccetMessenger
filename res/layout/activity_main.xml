@@ -18,7 +18,7 @@
         android:textSize="20dp"
 		android:textColor="#88000000"
 		android:textStyle="bold"
-        android:text="CCET DEGREE WING, CHD" />
+        android:text="@string/homeTitleCollegeName"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -86,7 +86,7 @@
             android:background="@drawable/enter_button_selector"
             android:textStyle="bold"
             android:onClick="navigateToKnowMeActivity"
-            android:text="Know About CCET Deg Wing" />
+            android:text="@string/knowAbtOrganisationButtonText" />
 
         <ImageView
             android:id="@+id/imageView1"

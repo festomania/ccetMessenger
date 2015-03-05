@@ -10,12 +10,7 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="Know Our App"/>
-     
-     <item
-        android:id="@+id/wantApp"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="Want your own App?"/>
+    
      
      
     <item
@@ -24,15 +19,5 @@
         android:showAsAction="never"
         android:title="Visit Our Website"/>
      
-    <item
-        android:id="@+id/contactUs"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="Contact Us"/> 
-    <item
-        android:id="@+id/exit"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="Exit"/>
 
 </menu>

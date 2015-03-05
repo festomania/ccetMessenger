@@ -12,6 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/wantsimilarappInvivisible"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -32,7 +33,7 @@
                     android:layout_marginTop="6dp"
                     android:background="#22262626"
                     android:padding="6dp"
-                    android:text="PINGBOOOkK poons dd sjss sj"
+                    android:text="PINGBOOOK"
 					android:textColor="#88000000"
 					android:textStyle="bold"
                     android:textSize="22dp" />
@@ -42,9 +43,8 @@
         <LinearLayout
             android:id="@+id/contentLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:layout_weight="22.20"
             android:orientation="vertical" >
 
             <ScrollView
@@ -71,5 +71,18 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/wantsimilarappInvivisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:layout_margin="3dp"
+        android:visibility="gone"
+        android:background="@drawable/enter_button_selector"
+        android:onClick="navigateToWantSimilarApp"
+        android:text="WANT SIMILAR APP?" />
 
 </RelativeLayout>

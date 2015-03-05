@@ -15,42 +15,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="22dp"
+        android:textSize="20dp"
 		android:textColor="#88000000"
-        android:textStyle="bold"
-        android:text="CCET, CHANDIGARH" />
+		android:textStyle="bold"
+        android:text="@string/homeTitleCollegeName"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" >
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:onClick="getToBulletinBoard"
-			android:textColor="#88000000"
-            android:text="Bulletin Board" />
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ccet" />
-
         <Button
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/textView1"
             android:layout_alignParentLeft="true"
-            android:onClick="navigateToStudentPanel"
 			android:textColor="#88000000"
+			android:padding="4dp"
+			android:textStyle="bold"
+            android:onClick="navigateToStudentPanel"
+            android:background="@drawable/enter_button_selector"
             android:text="Profile Panel" />
 
         <Button
@@ -59,9 +43,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/button2"
-            android:textColor="#88000000"
             android:layout_above="@+id/textView1"
+			android:padding="4dp"
+			android:textColor="#88000000"
+			android:textStyle="bold"
             android:onClick="navigateToFacultyPanel"
+            android:background="@drawable/enter_button_selector"
             android:text="Faculty Panel" />
 
         <TextView
@@ -70,10 +57,45 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:text="By:Roobal Jindal"
+            android:text=""
             android:textSize="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/enter_button_selector"
+            android:onClick="getToBulletinBoard"
+            android:text="Bulletin Board"
+            android:textColor="#88000000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/aboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentLeft="true"
+            android:textColor="#88000000"
+            android:background="@drawable/enter_button_selector"
+            android:textStyle="bold"
+            android:onClick="navigateToKnowMeActivity"
+            android:text="@string/knowAbtOrganisationButtonText" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/aboutUs"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ccet" />
     </RelativeLayout>
 
 </LinearLayout>

@@ -15,34 +15,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="40dp"
+        android:textSize="35dp"
 		android:textColor="#88000000"
 		android:textStyle="bold"
-        android:text="PANJAB UNIVERSITY" />
+        android:text="@string/homeTitleCollegeName" />
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" >
-
-        <TextView
-            android:id="@+id/textView1"
+        <Button
+            android:id="@+id/button1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="By:Roobal Jindal"
-            android:textSize="20dp"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="65dp"
-            android:src="@drawable/ccet" />
+            android:layout_height="60dp"
+            android:textSize="30dp"
+            android:layout_above="@+id/textView1"
+            android:layout_alignParentLeft="true"
+			android:textColor="#88000000"
+			android:padding="4dp"
+			android:textStyle="bold"
+            android:onClick="navigateToStudentPanel"
+            android:background="@drawable/enter_button_selector"
+            android:text="Profile Panel" />
 
         <Button
             android:id="@+id/button3"
@@ -51,42 +45,61 @@
             android:textSize="30dp"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/button2"
-            android:layout_marginTop="55dp"
-            android:background="@drawable/enter_button_selector"
+            android:layout_above="@+id/textView1"
+			android:padding="4dp"
+			android:textColor="#88000000"
+			android:textStyle="bold"
             android:onClick="navigateToFacultyPanel"
-            android:padding="4dp"
-            android:text="Faculty Panel"
-            android:textColor="#88000000"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:textSize="30dp"
-            android:layout_alignBaseline="@+id/button3"
-            android:layout_alignBottom="@+id/button3"
-            android:layout_alignParentLeft="true"
             android:background="@drawable/enter_button_selector"
-            android:onClick="navigateToStudentPanel"
-            android:padding="4dp"
-            android:text="Profile Panel"
-            android:textColor="#88000000"
-            android:textStyle="bold" />
+            android:text="Faculty Panel" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textSize="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
+            android:textSize="30dp"
+            android:layout_above="@+id/button1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/imageView1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/enter_button_selector"
             android:onClick="getToBulletinBoard"
             android:text="Bulletin Board"
             android:textColor="#88000000"
-            android:textSize="30dp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/aboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textSize="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentLeft="true"
+            android:textColor="#88000000"
+            android:background="@drawable/enter_button_selector"
+            android:textStyle="bold"
+            android:onClick="navigateToKnowMeActivity"
+            android:text="@string/knowAbtOrganisationButtonText" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="56dp"
+            android:src="@drawable/ccet" />
 
     </RelativeLayout>
 

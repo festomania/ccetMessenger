@@ -1,6 +1,8 @@
 package com.PinBoard.Notifications;
 
 import java.util.List;
+
+import org.Ccet.Messenger.CommonTextInfoDisplay;
 import org.Ccet.Messenger.Pingbook.R;
 
 import com.parse.ParseObject;
@@ -12,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -100,6 +103,29 @@ public class KnowMe extends Activity {
 	    });
 		
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		getMenuInflater().inflate(R.menu.contact_us, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+        case R.id.contactUs:
+        	Intent intent1=new Intent(KnowMe.this,CommonTextInfoDisplay.class);
+			intent1.putExtra("heading", "Contact Us");
+			intent1.putExtra("className", "ContactUs");
+			startActivity(intent1);
+            return true;
+        
+        default:
+            return super.onOptionsItemSelected(item);
+    }
+	}
+	
 
 
 }

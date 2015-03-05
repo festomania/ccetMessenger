@@ -8,10 +8,12 @@ import org.Ccet.Messenger.Pingbook.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 import com.parse.ProgressCallback;
 import com.parse.SaveCallback;
 
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.app.Activity;
@@ -32,7 +34,7 @@ import android.widget.Toast;
 public class PostNoticeFaculty extends Activity {
 
 	private static final int SELECT_PICTURE = 1;
-    private String selectedImagePath;
+    private String selectedImagePath="";
 	EditText titleEditText;
 	EditText contentEditText;
 	ImageView showSelectedImage;
@@ -51,16 +53,25 @@ public class PostNoticeFaculty extends Activity {
 		getMenuInflater().inflate(R.menu.post_notice_menubar, menu);
 		return true;
 	}
-
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		switch (item.getItemId()) {
         case R.id.postImageMenuBar:
-        	Intent intent = new Intent();
-            intent.setType("image/*");
-            intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent, ""),SELECT_PICTURE);
+        	if(Build.VERSION.SDK_INT <19)
+        	{
+	        	Intent intent = new Intent();
+	            intent.setType("image/*");
+	            intent.setAction(Intent.ACTION_GET_CONTENT);
+	            startActivityForResult(Intent.createChooser(intent, ""),SELECT_PICTURE);
+        	}else{
+	            
+	            Intent intent2 = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+	            intent2.addCategory(Intent.CATEGORY_OPENABLE);
+	            intent2.setType("image/jpeg");
+	            startActivityForResult(intent2, SELECT_PICTURE);
+        	}
             return true;
          default:   
         	return super.onOptionsItemSelected(item);
@@ -84,37 +95,39 @@ public class PostNoticeFaculty extends Activity {
 			mydialog.showDialog();
 			ParseObject notice= new ParseObject("Notices");
 			notice.put("heading", title);
-			notice.put("content", content);
-
+			notice.put("content", content+"\n\nPosted By: "+ParseUser.getCurrentUser().getString("username"));
+			notice.put("author", ParseUser.getCurrentUser().getString("username"));
 			String college = getResources().getString(R.string.college);
 			notice.put("college", college);
 			
 			
 			//*************************
-			
-			Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath);
-			ByteArrayOutputStream stream = new ByteArrayOutputStream();
-			bitmap.compress(Bitmap.CompressFormat.JPEG,22, stream);
-			byte[] image = stream.toByteArray();
-			
-			ParseFile file = new ParseFile("noticeImage.jpg", image);
-			file.saveInBackground(new SaveCallback() {
+			if(selectedImagePath.length()>0){
 				
-				@Override
-				public void done(ParseException e) {
-					// TODO Auto-generated method stub
+				Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath);
+				ByteArrayOutputStream stream = new ByteArrayOutputStream();
+				bitmap.compress(Bitmap.CompressFormat.JPEG,22, stream);
+				byte[] image = stream.toByteArray();
+				
+				ParseFile file = new ParseFile("noticeImage.jpg", image);
+				file.saveInBackground(new SaveCallback() {
 					
-				}
-			});
+					@Override
+					public void done(ParseException e) {
+						// TODO Auto-generated method stub
+						
+					}
+				});
 			
-
-			notice.put("ImageName", "Notice Image");
-			notice.put("ImageFile", file);
+				notice.put("ImageName", "Notice Image");			
+				notice.put("ImageFile", file);
+				
+			}
 			notice.saveInBackground(new SaveCallback() {
 				
 				@Override
 				public void done(ParseException e) {
-					Toast.makeText(PostNoticeFaculty.this, "Image Uploaded",
+					Toast.makeText(PostNoticeFaculty.this, "Notice Posted Successsfully",
 							Toast.LENGTH_SHORT).show();
 					mydialog.dismissDialog();
 				}

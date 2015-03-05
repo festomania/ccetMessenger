@@ -52,13 +52,12 @@
         android:prompt="@string/branch_prompt" />
 
     <CheckBox
-        android:id="@+id/dontsaveserverWholeFacultyMsg"
+        android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/BranchSpinnerFacCommunication"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
-        android:text="Dont save it on server" />
+        android:layout_alignRight="@+id/dontsaveserverWholeFacultyMsg"
+        android:layout_alignTop="@+id/BranchSpinnerFacCommunication"
+        android:text="Deptt Condition" />
 
     <Button
         android:id="@+id/button1"
@@ -66,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dontsaveserverWholeFacultyMsg"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="2dp"
         android:background="@drawable/enter_button_selector"
         android:onClick="sendMessageToWholeFaculty"
         android:padding="10dp"
@@ -75,11 +74,19 @@
         android:textStyle="bold" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/dontsaveserverWholeFacultyMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/dontsaveserverWholeFacultyMsg"
-        android:layout_alignTop="@+id/BranchSpinnerFacCommunication"
-        android:text="Deptt Condition" />
+        android:layout_below="@+id/SendtowholefacultycheckBox"
+        android:layout_centerHorizontal="true"
+        android:text="Dont save it on server" />
+
+    <CheckBox
+        android:id="@+id/SendtowholefacultycheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BranchSpinnerFacCommunication"
+        android:layout_centerHorizontal="true"
+        android:text="Send to all Members" />
 
 </RelativeLayout>

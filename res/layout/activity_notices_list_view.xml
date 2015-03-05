@@ -12,6 +12,7 @@
         android:layout_above="@+id/adViewNoticeList"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:longClickable="true"
         android:divider="@android:color/transparent"
         android:dividerHeight="6.0sp"
         android:scrollbars="none" >
