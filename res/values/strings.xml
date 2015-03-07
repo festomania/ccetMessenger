@@ -23,7 +23,7 @@
     <string name="alert_dialog_title">Profile</string>
     <string name="alert_dialog_success">Saved!</string>
     <string name="alert_dialog_failed">Failed with error.</string>
-    <string name="title_activity_notices_list_view">Recent Notices</string>
+    <string name="title_activity_notices_list_view">CCET Degree Wing, Chd</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_single_notice_details">CCET Degree Wing, Chd</string>
     <string name="title_activity_student_panel">CCET Degree Wing, Chd</string>
@@ -33,8 +33,8 @@
     
     
     
-	<string name="banner_ad_unit_id_live">ca-app-pub-3728580562604803/5903215772</string>
-	<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+	<string name="banner_ad_unit_id">ca-app-pub-3728580562604803/5903215772</string>
+	<string name="banner_ad_unit_id_testremove">ca-app-pub-3940256099942544/6300978111</string>
 
     <string-array name="deptt_arrays">
         <item>BTECH</item>

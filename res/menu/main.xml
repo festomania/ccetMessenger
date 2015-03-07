@@ -9,8 +9,7 @@
         android:id="@+id/aboutAppMenu"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Know Our App"/>
-    
+        android:title="Pingbbok: About App"/>
      
      
     <item

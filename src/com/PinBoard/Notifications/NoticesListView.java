@@ -140,7 +140,7 @@ public class NoticesListView extends Activity {
 		        });
 	    alert.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
 	        public void onClick(DialogInterface dialog, int whichButton) {
-	        	deleteNotice(arg2);
+	        	
 	        }
 	    });
 

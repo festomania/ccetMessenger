@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -38,6 +39,7 @@ public class CommonTextInfoDisplay extends Activity {
 	String className;
 	Context context;
 	Button invivibleWantSimilarApp;
+	Menu menu;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -89,5 +91,54 @@ public class CommonTextInfoDisplay extends Activity {
 		contentTextView.setText(obj.getString("content"));
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		getMenuInflater().inflate(R.menu.common_text_info_display, menu);
+		this.menu=menu;
+		updateMenu(true);
+		return true;
+	}
+	
+	void updateMenu(Boolean val){
+		MenuItem disclaimericon= menu.findItem(R.id.disclaimer);
+		if(className.equalsIgnoreCase("AboutApp") && val==true){;
+			disclaimericon.setVisible(true);
+		}
+		if(val==false){
+			disclaimericon.setVisible(false);
+		}
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+        
+        case R.id.disclaimer:
+        	if(checkNetwork())
+    		{
+        		updateMenu(false);
+    			heading.setText("Disclaimer !!");
+    			contentTextView.setText("Pingbook Inc. is not responsible for any kind of misuse of this app.\n" +
+    					"We are not responsible for any kind of offensive/vulgarity/fake content. \n" +
+    					"Thanks\n\n" +
+    					"Regards\n" +
+    					"Pingbook Inc.");
+    		}
+            return true;
+        
+        default:
+            return super.onOptionsItemSelected(item);
+    }
+	}
+	
+	boolean checkNetwork(){
+		if (!CheckNetworkStatus.getInstance(this).isOnline()) {
+			CheckNetworkStatus.getInstance(this).showerror(this,
+					this, "No network available.");
+		return false;
+		}
+		return true;
+	}
 
 }
